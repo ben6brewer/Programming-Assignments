@@ -15,3 +15,5 @@ zero values should go and swapping it with the current index.
 Part1Test.java && Part2Test.java
 These are files I used to test my algorithms on arrays of different sizes. I tested both algorithms on arrays of size 8 - 4096 incrementing by 2^n+2
 this resulted in 10 tests.
+
+I received full credit (50/50) for completing this assignment accurately and efficiently.

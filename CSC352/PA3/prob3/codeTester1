@@ -1,0 +1,19 @@
+#!/bin/bash
+# Author: Ben Brewer
+# File: codeTester1
+# Date: 9/22/23
+# Purpose: Run tests on the program 'count' for files starting with 'test' in the current directory.
+
+for ((i = 1; i <= 3; i++)); do
+        ./count < "test$i" > myOut 2> myErr
+        echo $? >> myOut
+
+        ./exCount < "test$i" > exOut 2> exErr
+        echo $? >> exOut
+
+        echo "Test File test$i"
+        echo "stdout diffs:"
+        diff myOut exOut
+        echo "stderr diffs:"
+        diff myErr exErr
+done

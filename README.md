@@ -1,1 +1,1 @@
-Here are the programming assignments I've completed as school assignments
+Here are the programmings I've written for school assignments

@@ -1,1 +1,1 @@
-Analysis of Discrete Structures
+Course: Analysis of Discrete Structures

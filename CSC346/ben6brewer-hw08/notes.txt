@@ -1,0 +1,9 @@
+Docker Login Command: aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 533267299552.dkr.ecr.us-east-1.amazonaws.com
+Docker Build Command: docker build . --platform linux/amd64 -t attempt2 .
+Docker Push Command: docker push e0661e4872cc.dkr.ecr.us-east-1.amazonaws.com/attempt2:latest
+Image URI: 533267299552.dkr.ecr.us-east-1.amazonaws.com/attempt2:latest
+TLS Cert ARN: arn:aws:acm:us-east-1:533267299552:certificate/798f68b4-5dfd-4c7c-ba2a-629c10feed0c
+LabRole ARN: arn:aws:iam::533267299552:role/LabRole
+VPC ID: vpc-0a8620831984fbaff
+Subnet IDs: subnet-078e3e2690884c451, subnet-059a5b16807df06ac
+LoadBalancerDNSName: attemp-LoadB-H3Je95SobSPM-1041606960.us-east-1.elb.amazonaws.com

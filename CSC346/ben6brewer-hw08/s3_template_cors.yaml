@@ -1,0 +1,66 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: S3 signed URL generator
+
+Parameters:
+  BucketPrefix:
+    Type: String
+    Description: The prefix name for the S3 buckets.
+    AllowedPattern: "(?!-)[a-zA-Z0-9-.]{1,63}(?<!-)"
+
+
+Resources:
+  # S3 File Upload bucket
+  S3UploadBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub "${BucketPrefix}-upload"
+      CorsConfiguration:
+        CorsRules:
+        - AllowedHeaders:
+            - "*"
+          AllowedMethods:
+            - GET
+            - PUT
+            - HEAD
+          AllowedOrigins:
+            - "*"
+
+  # S3 Download Bucket
+  S3DownloadBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub "${BucketPrefix}-download"
+      WebsiteConfiguration:
+        IndexDocument: "index.html"
+        ErrorDocument: "error.html"
+      CorsConfiguration:
+        CorsRules:
+        - AllowedHeaders:
+            - "*"
+          AllowedMethods:
+            - GET
+            - PUT
+            - HEAD
+          AllowedOrigins:
+            - "*"
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: false
+      OwnershipControls:
+        Rules:
+          - ObjectOwnership: BucketOwnerPreferred
+
+  # #### S3 Bukcet Policy
+  #
+  # Sets the required policy on the S3 bucket to allow public web hosting.
+  S3BucketPublicPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket:
+        Ref: S3DownloadBucket
+      PolicyDocument:
+        Statement:
+        - Action:
+          - s3:GetObject
+          Effect: Allow
+          Resource: !Sub "arn:aws:s3:::${S3DownloadBucket}/*"
+          Principal: "*"

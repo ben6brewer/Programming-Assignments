@@ -1,0 +1,5 @@
+# Copy the URLs of your test images into this file for us to check out
+
+Original URL: https://w2zhiv4rs7lq5f6bbrsnr36v7a0xqqsy.lambda-url.us-east-1.on.aws/
+Thumbnail URL: https://ben6brewer-upload-bucket-download.s3.amazonaws.com/beans-dce3bc7c-91bd-4bef-9b13-09bfdef9745a-crop600.png
+Large URL: https://ben6brewer-upload-bucket-download.s3.amazonaws.com/beans-dce3bc7c-91bd-4bef-9b13-09bfdef9745a-scale1500.png

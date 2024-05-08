@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://use.typekit.net/emv3zbo.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.digital.arizona.edu/lib/az-icons/main/az-icons-styles.css">
+    <link rel="stylesheet" href="https://cdn.digital.arizona.edu/lib/arizona-bootstrap/2.0.25/css/arizona-bootstrap.min.css" crossorigin="anonymous">
+    <title>PictureGram</title>
+
+    <style>
+        #postscontainer .list-group-item {
+            margin-bottom: 10px;
+        }
+
+        #postscontainer img {
+            cursor: zoom-in;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 20px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="bg-red p-3 mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-auto mr-auto">
+                    <span class="text-uppercase heading-style m-0 text-white">
+                        The University of Arizona
+                    </span>
+                </div>
+                <div class="col-auto">
+                    <span id="userlogin" class="heading-style m-0 text-white"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <main role="main">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+
+                    <h1>PictureGram</h1>
+
+                    <div id="newpostcontainer" hidden>
+                        <form class="form">
+                            <div class="form-group">
+                              <label for="newpostinput" class="sr-only">New Post</label>
+                              <textarea class="form-control" id="newpostinput" rows="2" placeholder="What's Up?"></textarea>
+                              <br>
+                              <label for="file">Attach optional image</label>
+                              <input id="imageupload" type="file" accept="image/*">
+                            </div>
+                            <button id="newpostbutton" class="btn btn-red mb-2">Post!</button>
+                        </form>
+                    </div>
+
+                    <div id="postscontainer" class="list-group"></div>
+
+                    <button id="olderpostsbutton" class="btn btn-red mb-2">Load Older Posts</button>
+                
+                    <div id="imagemodal" class="modal">
+                        <div class="modal-content">
+                            <img src="" id="imagefullsize" class="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script type="text/javascript" src="js/picturegramSDK.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+
+</body>
+
+</html>
